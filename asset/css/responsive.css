@@ -18,10 +18,6 @@
     display: block;
   }
 
-  #header .mobile-header {
-    display: inline-block;
-  }
-
   #nav {
     display: block;
     height: 100%;
@@ -30,7 +26,7 @@
     display: block;
   }
 
-  /* #nav > li:first-child {
+  #nav > li:first-child {
       display: inline-block;
-  } */
+  }
 }

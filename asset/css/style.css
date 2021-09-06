@@ -140,10 +140,6 @@ html {
   color: #fff;
 }
 
-#header .mobile-header {
-  display: none;
-}
-
 #nav {
   display: inline-block;
 }
