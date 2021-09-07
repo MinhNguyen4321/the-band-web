@@ -146,6 +146,7 @@ html {
   padding: 12px 24px;
   display: none;
   text-transform: uppercase;
+  background-color: #000;
 }
 
 #nav {
