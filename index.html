@@ -255,16 +255,16 @@
     });
 
     // Đóng/Mở mobile menu
-    var header = document.getElementById("header");
+    var nav = document.getElementById("nav");
     var headerHeight = header.clientHeight;
     var mobileMenu = document.getElementsByClassName("mobile-menu-btn");
 
     mobileMenu[0].onclick = function () {
-      var isClosed = header.clientHeight === headerHeight;
-      if (isClosed) {
-        header.style.height = "auto";
+      var isOpened = nav.style.display == "block";
+      if (isOpened) {
+        nav.style.display = null;
       } else {
-        header.style.height = null;
+        nav.style.display = "block";
         hideSubNavAll();
       }
     }

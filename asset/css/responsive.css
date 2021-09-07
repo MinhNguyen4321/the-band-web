@@ -25,9 +25,10 @@
   }
 
   #nav {
-    display: block;
-    height: 100%;
+    position: fixed;
     background-color: #ccc;
+    width: 100%;
+    display: none;
   }
 
   #nav>li {
