@@ -256,16 +256,26 @@
 
     // Đóng/Mở mobile menu
     var nav = document.getElementById("nav");
-    var headerHeight = header.clientHeight;
     var mobileMenu = document.getElementsByClassName("mobile-menu-btn");
+    var subNavItems = document.querySelectorAll('#nav .subnav');
+
+    function openMenu() {
+      nav.style.setProperty("display", "block");
+    }
+
+    function closeMenu() {
+      nav.style.setProperty("display", null);
+      for (var subNavItem of subNavItems) {
+        subNavItem.style.display = null;
+      }
+    }
 
     mobileMenu[0].onclick = function () {
       var isOpened = nav.style.display == "block";
       if (isOpened) {
-        nav.style.display = null;
+        closeMenu();
       } else {
-        nav.style.display = "block";
-        hideSubNavAll();
+        openMenu();
       }
     }
 
@@ -275,7 +285,7 @@
 
     mobileMedia.addListener(function () {
       if(!mobileMedia.matches) {
-        hideSubNavAll();
+        closeMenu();
       }
     })
 
@@ -286,21 +296,12 @@
         var subMenu = this.nextElementSibling;
         var isParentMenu = subMenu && subMenu.classList.contains('subnav');
         if (!isParentMenu) {
-          nav.style.display = null;
-          hideSubNavAll();
+          closeMenu();
         } else {
           if (mobileMedia.matches) {
             collapseSubNav(subMenu);
           }
         }
-      }
-    }
-
-    // Đóng tất cả subnav
-    var subNavItems = document.querySelectorAll('#nav .subnav');
-    function hideSubNavAll() {
-      for (var subNavItem of subNavItems) {
-        subNavItem.style.display = null;
       }
     }
 
