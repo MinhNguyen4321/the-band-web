@@ -17,8 +17,8 @@
 <body>
   <div id="main">
     <div id="header">
+      <p class="title">THE BAND</p>
       <!-- Begin: Nav -->
-      <div id="mobile-header">The band</div>
       <ul id="nav">
         <li><a href="#">Home</a></li>
         <li><a href="#band">Band</a></li>
@@ -286,7 +286,7 @@
         var subMenu = this.nextElementSibling;
         var isParentMenu = subMenu && subMenu.classList.contains('subnav');
         if (!isParentMenu) {
-          header.style.height = null;
+          nav.style.display = null;
           hideSubNavAll();
         } else {
           if (mobileMedia.matches) {
