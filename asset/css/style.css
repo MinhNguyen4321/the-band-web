@@ -91,15 +91,15 @@ html {
 }
 
 #header {
+  --height-header: 46px;
   z-index: 1;
   background-color: #000;
-  height: 46.4px;
+  height: var(--height-header);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-  overflow: hidden;
 }
 
 #header a {
@@ -138,6 +138,14 @@ html {
 
 #header .search-icon, #header .menu-icon {
   color: #fff;
+}
+
+#mobile-header {
+  height: var(--height-header);
+  color: #fff;
+  padding: 12px 24px;
+  display: none;
+  text-transform: uppercase;
 }
 
 #nav {
