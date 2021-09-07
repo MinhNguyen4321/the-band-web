@@ -39,10 +39,14 @@
   }
 
   #nav .subnav {
-    display: initial;
+    position: initial;
     background-color: #ccc;
     box-shadow: none;
   }
+
+  #nav li:hover .subnav {
+    display: none;
+}
 
   #nav .subnav a {
     color: #000;

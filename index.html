@@ -300,17 +300,17 @@
     var subNavItems = document.querySelectorAll('#nav .subnav');
     function hideSubNavAll() {
       for (var subNavItem of subNavItems) {
-        subNavItem.style.position = null;
+        subNavItem.style.display = null;
       }
     }
 
     // Hàm đóng/mở SubNav
     function collapseSubNav(subMenu) {
-      isOpenSubNav = subMenu.style.position === "initial";
+      isOpenSubNav = subMenu.style.display === "initial";
       if (isOpenSubNav) {
-        subMenu.style.position = null;
+        subMenu.style.display = null;
       } else {
-        subMenu.style.position = "initial";
+        subMenu.style.display = "initial";
       }
     }
 
