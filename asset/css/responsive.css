@@ -26,6 +26,7 @@
 
   #nav {
     position: fixed;
+    top: var(--height-header);
     background-color: #ccc;
     width: 100%;
     display: none;
