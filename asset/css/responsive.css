@@ -59,7 +59,8 @@
     padding: 0 41px;
   }
 
-  @keyframes identifier {
-    
+  #slider .text-content {
+    display: none;
   }
+
 }
