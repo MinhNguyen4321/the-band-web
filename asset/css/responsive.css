@@ -1,11 +1,9 @@
 /* PC */
 @media (min-width: 1024px) {
-
 }
 
 /* Table */
 @media (min-width: 768px) and (max-width: 1023px) {
-
 }
 
 /* Mobile */
@@ -41,7 +39,7 @@
   }
 
   #nav .subnav {
-    position: initial;
+    display: initial;
     background-color: #ccc;
     box-shadow: none;
   }
@@ -49,5 +47,9 @@
   #nav .subnav a {
     color: #000;
     padding: 8px 41px;
+  }
+
+  @keyframes identifier {
+    
   }
 }

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Band</title>
-  <link rel="icon" href="/asset/img/band.ico" type="image/x-icon"/>
+  <link rel="icon" href="/asset/img/band.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/asset/css/style.css" />
   <link rel="stylesheet" href="/asset/css/responsive.css" />
   <link rel="stylesheet" href="/asset/font/themify-icons/themify-icons.css" />
@@ -29,9 +29,9 @@
             <i class="fas fa-caret-down"></i>
           </a>
           <ul class="subnav">
-            <li><a href="#">Merchandise</a></li>
-            <li><a href="#">Extras</a></li>
-            <li><a href="#">Media</a></li>
+            <li><a href="javascript:void(0)">Merchandise</a></li>
+            <li><a href="javascript:void(0)">Extras</a></li>
+            <li><a href="javascript:void(0)">Media</a></li>
           </ul>
         </li>
       </ul>
@@ -45,7 +45,7 @@
       <a href="javascript:void(0)" class="mobile-menu-btn">
         <i class="menu-icon fas fa-bars"></i>
       </a>
-     
+
     </div>
 
     <div id="slider">
@@ -142,6 +142,7 @@
           </div>
         </div>
       </div>
+      
       <!-- Begin: Contact section -->
       <div id="contact" class="content-section">
         <h2 class="section-heading">CONTACT</h2>
@@ -238,6 +239,7 @@
       // modal.classList.add('open')
       modal.style.setProperty("display", "flex");
     }
+
     function hideBuyTickets() {
       // modal.classList.remove('open')
       modal.style.setProperty("display", "none");
@@ -257,29 +259,61 @@
     var headerHeight = header.clientHeight;
     var mobileMenu = document.getElementsByClassName("mobile-menu-btn");
 
-    mobileMenu[0].onclick = function() {
+    mobileMenu[0].onclick = function () {
       var isClosed = header.clientHeight === headerHeight;
       if (isClosed) {
         header.style.height = "auto";
       } else {
         header.style.height = null;
+        hideSubNavAll();
       }
     }
 
     // Tự động đóng menu sau khi chọn menu
-    var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
-    for(var i = 0; i < menuItems.length; i++) {
+    var menuItems = document.querySelectorAll('#nav li a');
+    const mobileMedia = window.matchMedia('(max-width: 767px)');
+
+    mobileMedia.addListener(function () {
+      if(!mobileMedia.matches) {
+        hideSubNavAll();
+      }
+    })
+
+    for (var i = 0; i < menuItems.length; i++) {
       var menuItem = menuItems[i];
 
-      menuItem.onclick = function() {
-        var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
-        if(!isParentMenu) {
+      menuItem.onclick = function () {
+        var subMenu = this.nextElementSibling;
+        var isParentMenu = subMenu && subMenu.classList.contains('subnav');
+        if (!isParentMenu) {
           header.style.height = null;
+          hideSubNavAll();
+        } else {
+          if (mobileMedia.matches) {
+            collapseSubNav(subMenu);
+          }
         }
       }
     }
 
-    // Ẩn/Hiện subnav
+    // Đóng tất cả subnav
+    var subNavItems = document.querySelectorAll('#nav .subnav');
+    function hideSubNavAll() {
+      for (var subNavItem of subNavItems) {
+        subNavItem.style.position = null;
+      }
+    }
+
+    // Hàm đóng/mở SubNav
+    function collapseSubNav(subMenu) {
+      isOpenSubNav = subMenu.style.position === "initial";
+      if (isOpenSubNav) {
+        subMenu.style.position = null;
+      } else {
+        subMenu.style.position = "initial";
+      }
+    }
+
   </script>
 </body>
 
