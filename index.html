@@ -290,9 +290,7 @@
     })
 
     for (var i = 0; i < menuItems.length; i++) {
-      var menuItem = menuItems[i];
-
-      menuItem.onclick = function () {
+      menuItems[i].onclick = function () {
         var subMenu = this.nextElementSibling;
         var isParentMenu = subMenu && subMenu.classList.contains('subnav');
         if (!isParentMenu) {

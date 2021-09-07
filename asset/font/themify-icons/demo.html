@@ -7,45 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box {
-            position: fixed;
-            z-index: 4;
+        .parent {
+            z-index: 1;
+            background: red;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;
+            position: relative;
         }
 
-        #box1 {
+        .child {
+            background: blue;
+            width: 100px;
+            height: 100px;
             position: absolute;
-            width: 300px;
-            height: 300px;
-            background-color: aqua;
-            z-index: 3;
-        }
-
-        #box2 {
-            top: 150px;
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background-color: black;
-            z-index: 2;
-        }
-
-        #box3 {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background-color: chartreuse;
-            top: 25px;
-            left: 200px;
-            z-index: 2;
+            top: 15px;
+            left: 15px;
+            transform: translateZ(-10px);
         }
     </style>
 </head>
 
 <body>
-    <div class = box>
-        <div id="box1">box1</div>
-        <div id="box2">box2
-            <div id="box3">box3</div>
+    <div class="parent">
+        Parent
+        <div class="child">
+            Child
         </div>
     </div>
 </body>

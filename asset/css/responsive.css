@@ -9,7 +9,7 @@
 /* Mobile */
 @media (max-width: 767px) {
   #header {
-    overflow: hidden;
+    transform-style: preserve-3d;
   }
 
   #header .title {
@@ -34,6 +34,8 @@
     background-color: #ccc;
     width: 100%;
     display: none;
+    animation: CollapseMenu ease .5s;
+    transform-style: preserve-3d;
   }
 
   #nav>li {
@@ -45,9 +47,10 @@
   }
 
   #nav .subnav {
-    position: initial;
+    width: 100%;
     background-color: #ccc;
     box-shadow: none;
+    animation: CollapseMenu ease .5s;
   }
 
   #nav li:hover .subnav {
@@ -61,6 +64,18 @@
 
   #slider .text-content {
     display: none;
+  }
+
+  @keyframes CollapseMenu {
+    from {
+      transform: translate3d(0, -100%, -10px);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translate3d(0, 0, -10px);
+      opacity: 1;
+    }
   }
 
 }
