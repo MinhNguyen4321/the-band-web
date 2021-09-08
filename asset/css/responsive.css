@@ -72,7 +72,7 @@
     background-color: #ccc;
     width: 100%;
     display: none;
-    /* animation: openMenu ease .5s 0s forwards; */
+    animation: openMenu ease .5s 0s forwards;
   }
 
   #nav>li {
