@@ -152,13 +152,8 @@ html {
   background-color: #ccc;
 }
 
-#header .mobile-menu-btn:active .menu-icon {
+#header .mobile-menu-btn:active {
   color: #000;
-}
-
-#header .search-icon,
-#header .menu-icon {
-  color: #fff;
 }
 
 #nav {

@@ -39,11 +39,11 @@
 
       <!-- Search Button -->
       <a href="javascript:void(0)" class="search-btn">
-        <i class="search-icon fas fa-search"></i>
+        <i class="fas fa-search"></i>
       </a>
       <!-- Mobile Menu Button -->
       <a href="javascript:void(0)" class="mobile-menu-btn">
-        <i class="menu-icon fas fa-bars"></i>
+        <i id="js-icon-mobile-menu" class="fa fa-bars"></i>
       </a>
 
     </div>
@@ -277,21 +277,24 @@
 
     // Đóng/Mở mobile menu
     var nav = document.getElementById("nav");
-    var mobileMenu = document.getElementsByClassName("mobile-menu-btn");
+    var mobileMenu = document.querySelector(".mobile-menu-btn");
     var subNavItems = document.querySelectorAll('#nav .subnav');
+    var iconMobileMenu = document.getElementById("js-icon-mobile-menu");
 
     function openMenu() {
       nav.style.setProperty("display", "block");
+      iconMobileMenu.className = "fa fa-close";
     }
-
+    
     function closeMenu() {
       nav.style.setProperty("display", null);
+      iconMobileMenu.className = "fa fa-bars";
       for (var subNavItem of subNavItems) {
         subNavItem.style.display = null;
       }
     }
 
-    mobileMenu[0].onclick = function () {
+    mobileMenu.onclick = function () {
       var isOpened = nav.style.display == "block";
       if (isOpened) {
         closeMenu();
@@ -299,7 +302,7 @@
         openMenu();
       }
     }
-
+    
     // Đóng menu khi click vào vùng khác ngoài menu
     var main = document.getElementById("main");
     var header = document.getElementById("header");
@@ -313,6 +316,7 @@
     var menuItems = document.querySelectorAll('#nav li a');
     const mobileMedia = window.matchMedia('(max-width: 767px)');
 
+    var barsIconMenu = document.getElementById('js-bars-icon');
     mobileMedia.addListener(function () {
       if (!mobileMedia.matches) {
         closeMenu();
