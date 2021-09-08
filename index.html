@@ -76,15 +76,15 @@
           ea commodo consequat.
         </p>
         <div class="row member-list">
-          <div class="col col-third text-center">
+          <div class="col col-third s-col-full text-center">
             <p class="member-name">Name</p>
             <img src="/asset/img/band/bandmember.jpg" alt="" class="avatar" />
           </div>
-          <div class="col col-third text-center">
+          <div class="col col-third s-col-full text-center">
             <p class="member-name">Name</p>
             <img src="/asset/img/band/bandmember.jpg" alt="" class="avatar" />
           </div>
-          <div class="col col-third text-center">
+          <div class="col col-third s-col-full text-center">
             <p class="member-name">Name</p>
             <img src="/asset/img/band/bandmember.jpg" alt="" class="avatar" />
           </div>
@@ -106,7 +106,7 @@
           </ul>
           <!-- Places -->
           <div class="row place-list">
-            <div class="col col-third">
+            <div class="col col-third s-col-full mb-16">
               <img src="/asset/img/places/newyork.jpg" alt="New York" class="place-img" />
               <div class="place-body">
                 <p class="place-heading"><b>New York</b></p>
@@ -114,10 +114,10 @@
                 <p class="place-desc">
                   Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                 </p>
-                <button class="btn js-buy-ticket">Buy Tickets</button>
+                <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
               </div>
             </div>
-            <div class="col col-third">
+            <div class="col col-third s-col-full mb-16">
               <img src="/asset/img/places/paris.jpg" alt="Paris" class="place-img" />
               <div class="place-body">
                 <p class="place-heading"><b>Paris</b></p>
@@ -125,10 +125,10 @@
                 <p class="place-desc">
                   Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                 </p>
-                <button class="btn js-buy-ticket">Buy Tickets</button>
+                <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
               </div>
             </div>
-            <div class="col col-third">
+            <div class="col col-third s-col-full mb-16">
               <img src="/asset/img/places/sanfran.jpg" alt="New York" class="place-img" />
               <div class="place-body">
                 <p class="place-heading"><b>San Francisco</b></p>
@@ -136,7 +136,7 @@
                 <p class="place-desc">
                   Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                 </p>
-                <button class="btn js-buy-ticket">Buy Tickets</button>
+                <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
               </div>
             </div>
           </div>
@@ -148,18 +148,18 @@
         <h2 class="section-heading">CONTACT</h2>
         <p class="section-sub-heading">Fan? Drop a note!</p>
         <div class="row contact-content">
-          <div class="col col-second contact-info">
+          <div class="col col-second s-col-full contact-info mb-32">
             <p><i class="fas fa-map-marker-alt"></i> Chicago, US</p>
-            <p><i class="fas fa-phone-alt"></i> Phone: +00 151515</p>
-            <p><i class="fas fa-envelope"></i> Email: mail@mail.com</p>
+            <p><i class="fas fa-phone-alt"></i> Phone: <a href="tel:+00 151515">+00 151515</a></p>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
           </div>
-          <div class="col col-second contact-form">
+          <div class="col col-second s-col-full contact-form">
             <form action="">
               <div class="row">
-                <div class="col col-second">
+                <div class="col col-second s-col-full">
                   <input type="text" name="" placeholder="Name" required class="form-control" />
                 </div>
-                <div class="col col-second">
+                <div class="col col-second s-col-full s-mt-8">
                   <input type="email" name="" placeholder="Email" required class="form-control" />
                 </div>
               </div>
@@ -168,7 +168,7 @@
                   <input type="text" name="" placeholder="Message" required class="form-control" />
                 </div>
               </div>
-              <input class="btn pull-right mt-16" type="submit" value="SEND" />
+              <input class="btn pull-right s-full-width mt-16" type="submit" value="SEND" />
             </form>
           </div>
         </div>
@@ -278,6 +278,15 @@
         openMenu();
       }
     }
+
+    // Đóng menu khi click vào vùng khác ngoài menu
+    var main = document.getElementById("main");
+    var header = document.getElementById("header");
+    
+    main.addEventListener("click", closeMenu);
+    header.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
 
     // Tự động đóng menu sau khi chọn menu
     var menuItems = document.querySelectorAll('#nav li a');

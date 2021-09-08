@@ -86,6 +86,14 @@ html {
   margin-top: 16px !important;
 }
 
+.mb-16 {
+  margin-bottom: 16px !important;
+}
+
+.mb-32 {
+  margin-bottom: 32px !important;
+}
+
 .pull-right {
   float: right !important;
 }
@@ -347,7 +355,15 @@ html {
 
 .contact-info {
   font-size: 18px;
-  
+}
+
+.contact-info a {
+  color: rgb(0, 0, 238);
+  opacity: 1;
+}
+
+.contact-info a:hover {
+  opacity: 0.6;
 }
 
 .contact-info i[class*="fas"] {
