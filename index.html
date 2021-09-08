@@ -48,12 +48,33 @@
 
     </div>
 
-    <div id="slider">
-      <div class="text-content">
-        <h3 class="text-heading">Chicago</h3>
-        <p class="text-description">
-          <b>Thank you, Chicago - A night we won't forget.</b>
-        </p>
+    <div id="slideshow">
+      <div class="slide-item js-slides fade">
+        <img src="./asset/img/slider/chicago.jpg" alt="Chicago">
+        <div class="slide-content">
+          <h3 id="caption-slide">Chicago</h3>
+          <p id="description-slide">
+            <b>Thank you, Chicago - A night we won't forget.</b>
+          </p>
+        </div>
+      </div>
+      <div class="slide-item js-slides fade">
+        <img src="./asset/img/slider/la.jpg" alt="Los Angeles">
+        <div class="slide-content">
+          <h3 id="caption-slide">Los Angeles</h3>
+          <p id="description-slide">
+            <b>We had the best time playing at Venice Beach.</b>
+          </p>
+        </div>
+      </div>
+      <div class="slide-item js-slides fade">
+        <img src="./asset/img/slider/ny.jpg" alt="New York">
+        <div class="slide-content">
+          <h3 id="caption-slide">New York</h3>
+          <p id="description-slide">
+            <b>The atmosphere in New York is lorem ipsum.</b>
+          </p>
+        </div>
       </div>
     </div>
 
@@ -142,7 +163,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Begin: Contact section -->
       <div id="contact" class="content-section">
         <h2 class="section-heading">CONTACT</h2>
@@ -282,7 +303,7 @@
     // Đóng menu khi click vào vùng khác ngoài menu
     var main = document.getElementById("main");
     var header = document.getElementById("header");
-    
+
     main.addEventListener("click", closeMenu);
     header.addEventListener("click", function (event) {
       event.stopPropagation();
@@ -293,7 +314,7 @@
     const mobileMedia = window.matchMedia('(max-width: 767px)');
 
     mobileMedia.addListener(function () {
-      if(!mobileMedia.matches) {
+      if (!mobileMedia.matches) {
         closeMenu();
       }
     })
@@ -312,7 +333,7 @@
       }
     }
 
-    // Hàm đóng/mở SubNav
+    // Đóng/mở SubNav
     function collapseSubNav(subMenu) {
       isOpenSubNav = subMenu.style.display === "contents";
       if (isOpenSubNav) {
@@ -322,6 +343,21 @@
       }
     }
 
+    // Slideshow tự động
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      var slides = document.getElementsByClassName("js-slides");
+      for(var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1};
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
   </script>
 </body>
 
