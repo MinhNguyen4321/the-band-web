@@ -72,8 +72,7 @@
     background-color: #ccc;
     width: 100%;
     display: none;
-    transform-style: preserve-3d;
-    animation: collapseMenu ease .5s;
+    /* animation: openMenu ease .5s 0s forwards; */
   }
 
   #nav>li {
@@ -88,7 +87,6 @@
     width: 100%;
     background-color: #ccc;
     box-shadow: none;
-    animation: collapseMenu ease .5s;
   }
 
   #nav li:hover .subnav {
@@ -108,7 +106,7 @@
     font-size: 32px;
   }
 
-  @keyframes collapseMenu {
+  @keyframes openMenu {
     from {
       transform: translate3d(0, -100%, -10px);
       opacity: 0;
@@ -116,6 +114,18 @@
   
     to {
       transform: translate3d(0, 0, -10px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes closeMenu {
+    from {
+      transform: translate3d(0, 0, -10px);
+      opacity: 0;
+    }
+    
+    to {
+      transform: translate3d(0, -100%, -10px);
       opacity: 1;
     }
   }

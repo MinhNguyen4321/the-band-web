@@ -143,11 +143,11 @@ html {
   background-color: red;
 }
 
-#header .mobile-menu-btn:hover {
+#header .mobile-menu-btn:active {
   background-color: #ccc;
 }
 
-#header .mobile-menu-btn:hover .menu-icon {
+#header .mobile-menu-btn:active .menu-icon {
   color: #000;
 }
 
@@ -417,6 +417,7 @@ html {
 }
 
 .modal {
+  z-index: 2;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -438,7 +439,7 @@ html {
   max-width: calc(100% - 24px);
   min-height: 200px;
   position: relative;
-  animation: modalFadeIn 0.5s ease;
+  animation: openModal 0.5s ease 0s forwards;
 }
 
 .modal-header {
@@ -517,7 +518,7 @@ html {
   color: #2196f3;
 }
 
-@keyframes modalFadeIn {
+@keyframes openModal {
   from {
     transform: translateY(-100%);
     opacity: 0;

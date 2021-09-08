@@ -260,6 +260,7 @@
     var subNavItems = document.querySelectorAll('#nav .subnav');
 
     function openMenu() {
+      nav.style.setProperty("animation", "openMenu ease .5s 0s forwards");
       nav.style.setProperty("display", "block");
     }
 
@@ -314,11 +315,11 @@
 
     // Hàm đóng/mở SubNav
     function collapseSubNav(subMenu) {
-      isOpenSubNav = subMenu.style.display === "initial";
+      isOpenSubNav = subMenu.style.display === "contents";
       if (isOpenSubNav) {
         subMenu.style.display = null;
       } else {
-        subMenu.style.display = "initial";
+        subMenu.style.display = "contents";
       }
     }
 
