@@ -63,6 +63,7 @@ html {
 }
 
 .btn {
+  -webkit-appearance: none;
   font-size: 15px;
   font-family: inherit;
   margin-bottom: 16px;
@@ -202,12 +203,13 @@ html {
   position: relative;
   margin-top: 46px;
   padding-top: 50%;
-  background: url("/asset/img/slider/chicago.jpg") top center / cover no-repeat;
+  background: url("../img/slider/chicago.jpg") top center / cover no-repeat;
 }
 
 #slider .text-content {
   color: #fff;
   text-align: center;
+  text-shadow: 0 0 3px #000;
   position: absolute;
   bottom: 47px;
   left: 50%;
@@ -378,6 +380,7 @@ html {
   padding: 8px;
   border: 1px solid #ccc;
   width: 100%;
+  font: inherit;
 }
 
 /* Map section */
@@ -435,7 +438,7 @@ html {
   max-width: calc(100% - 24px);
   min-height: 200px;
   position: relative;
-  animation: modalFadeIn ease 0.5s;
+  animation: modalFadeIn 0.5s ease;
 }
 
 .modal-header {

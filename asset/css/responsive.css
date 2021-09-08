@@ -1,10 +1,10 @@
 /* PC */
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
 
 }
 
 /* Table & Mobile */
-@media (max-width: 1023px) {
+@media (max-width: 63.9375em) {
   .btn {
     padding: 15px 16px;
   }
@@ -29,7 +29,7 @@
 }
 
 /* Table */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 48em) and (max-width: 63.9375em) {
   #footer .social-list {
     font-size: 48px;
   }
@@ -72,8 +72,8 @@
     background-color: #ccc;
     width: 100%;
     display: none;
-    animation: CollapseMenu ease .5s;
     transform-style: preserve-3d;
+    animation: collapseMenu ease .5s;
   }
 
   #nav>li {
@@ -88,7 +88,7 @@
     width: 100%;
     background-color: #ccc;
     box-shadow: none;
-    animation: CollapseMenu ease .5s;
+    animation: collapseMenu ease .5s;
   }
 
   #nav li:hover .subnav {
@@ -108,7 +108,7 @@
     font-size: 32px;
   }
 
-  @keyframes CollapseMenu {
+  @keyframes collapseMenu {
     from {
       transform: translate3d(0, -100%, -10px);
       opacity: 0;
