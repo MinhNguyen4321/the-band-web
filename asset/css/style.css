@@ -529,7 +529,7 @@ html {
 
 @keyframes openModal {
   from {
-    transform: translateY(-100%);
+    transform: translateY(-140px);
     opacity: 0;
   }
 
@@ -541,7 +541,7 @@ html {
 
 @-webkit-keyframes openModal {
   from {
-    transform: translateY(-100%);
+    transform: translateY(-150px);
     opacity: 0;
   }
 
