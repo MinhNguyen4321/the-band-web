@@ -105,38 +105,13 @@
 
   @keyframes openMenu {
     from {
-      transform: translate3d(0, -100%, -10px);
       opacity: 0;
+      transform: translate3d(0, -100%, -10px);
     }
   
     to {
-      transform: translate3d(0, 0, -10px);
       opacity: 1;
+      transform: translate3d(0, 0, -10px);
     }
   }
-
-  @keyframes closeMenu {
-    from {
-      transform: translate3d(0, 0, -10px);
-      opacity: 0;
-    }
-    
-    to {
-      transform: translate3d(0, -100%, -10px);
-      opacity: 1;
-    }
-  }
-
-  @-webkit-keyframes closeMenu {
-    from {
-      transform: translate3d(0, 0, -10px);
-      opacity: 0;
-    }
-    
-    to {
-      transform: translate3d(0, -100%, -10px);
-      opacity: 1;
-    }
-  }
-
 }
